@@ -39,11 +39,6 @@ const Layout: React.FC<Props> = (props) => (
         cursor: pointer;
       }
     `}</style>
-    <style jsx>{`
-      .layout {
-        padding: 0 2rem;
-      }
-    `}</style>
   </div>
 );
 

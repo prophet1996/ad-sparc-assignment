@@ -1,14 +1,26 @@
-import { getProviders } from "next-auth/react";
+import { getProviders, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import LoginForm from "../../components/LoginForm";
 import { AuthProviderMap } from "../../lib/types";
 
 export default function Login({ providers }: { providers: AuthProviderMap }) {
+  const { status } = useSession();
+  const router = useRouter();
+  if (status === "authenticated") {
+    router.push("/");
+  }
   return (
     <section className="flex h-screen w-screen overflow-hidden">
-      <LoginForm wrapperClassName="grow-[7] flex flex-col justify-start items-center xs:p-4 max-xs:pt-5" authProviders={providers} />
+      <LoginForm
+        wrapperClassName="grow-[7] flex flex-col justify-start items-center xs:p-4 max-xs:pt-5"
+        authProviders={providers}
+      />
       <div className="grow-[5] hidden lg:flex items-center bg-indigo-500 h-screen flex-col justify-between px-4 gap-20">
         <div className="flex gap-6 mt-10">
-          <div className="relative shadow bg-white rounded-lg " style={{ width: 313, height: 437 }}>
+          <div
+            className="relative shadow bg-white rounded-lg "
+            style={{ width: 313, height: 437 }}
+          >
             <p
               className="w-72 h-4 absolute text-xs font-bold leading-none text-gray-800"
               style={{ left: 14.31, top: 14.31 }}

@@ -8,11 +8,11 @@ function LoginForm({
   authProviders,
   wrapperClassName,
 }: {
-  authProviders:AuthProviderMap,
-  wrapperClassName:string,
+  authProviders: AuthProviderMap;
+  wrapperClassName: string;
 }) {
   const [disableInteractions, setdisableInteractions] = useState(false);
-  const githubProvider = Object.values(authProviders).find(
+  const githubProvider = Object.values(authProviders || {}).find(
     ({ id }) => id === GITHUB_PROVIDER_ID
   );
   return (
@@ -44,9 +44,7 @@ function LoginForm({
           <p className="w-72 text-sm leading-tight text-gray-500">
             min. 8 characters
           </p>
-          <img
-            className="w-5 h-full rounded-lg"
-          />
+          <img className="w-5 h-full rounded-lg" />
         </div>
       </div>
       <div className="inline-flex space-x-3 w-80 h-5 mb-10 max-xs:w-full">
@@ -75,19 +73,25 @@ function LoginForm({
           Login
         </p>
       </button>
-      <div className="text-lg font-bold leading-tight text-center mb-2">OR</div>
-      <button
-        disabled={disableInteractions}
-        className="bg-white active:bg-gray-100 outline-none focus:outline-none hover:shadow-md font-bold text-sm items-center justify-start w-80 max-xs:w-full px-4 py-3 rounded-lg mb-4 shadow-xl text-center border border-indigo-500 text-indigo-500 disabled:opacity-50"
-        type="button"
-        style={{ transition: "all .15s ease" }}
-        onClick={() => {
-          setdisableInteractions(true);
-          signIn(githubProvider.id);
-        }}
-      >
-        Sign in with {githubProvider.name}
-      </button>
+      {!!githubProvider && (
+        <>
+          <div className="text-lg font-bold leading-tight text-center mb-2">
+            OR
+          </div>
+          <button
+            disabled={disableInteractions}
+            className="bg-white active:bg-gray-100 outline-none focus:outline-none hover:shadow-md font-bold text-sm items-center justify-start w-80 max-xs:w-full px-4 py-3 rounded-lg mb-4 shadow-xl text-center border border-indigo-500 text-indigo-500 disabled:opacity-50"
+            type="button"
+            style={{ transition: "all .15s ease" }}
+            onClick={() => {
+              setdisableInteractions(true);
+              signIn(githubProvider.id);
+            }}
+          >
+            Sign in with {githubProvider.name}
+          </button>
+        </>
+      )}
       <div className="inline-flex items-center justify-start w-80 px-4 py-3 mb-24">
         <p className="flex-1 text-sm font-bold leading-tight text-center text-indigo-500">
           Forgot password
