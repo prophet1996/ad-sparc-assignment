@@ -9,8 +9,9 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs':"360px",
+        xs: "360px",
         "max-xs": { max: "380px" },
+        "max-sm": { max: "460px" },
       },
       fontSize: {
         "2xs": ["10px", "12px"],
@@ -20,6 +21,7 @@ module.exports = {
         std: ["18px", "24px"],
         lg: ["20px", "28px"],
         xl: ["24px", "32px"],
+        "4xl": ["40px", "56px"],
         "6xl": ["60px", "82px"],
       },
       fontFamily: {

@@ -1,36 +1,107 @@
-import React from "react"
-import { GetStaticProps } from "next"
-import Layout from "../components/Layout"
+import { useState } from "react";
+import FoodTypeFilters from "../components/FoodTypeFilters";
+import Layout from "../components/Layout";
+import OfferCard from "../components/OfferCard";
+import RestaurantCard from "../components/RestaurantCard";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = [
-    {
-      id: "1",
-      title: "Prisma is the perfect ORM for Next.js",
-      content: "[Prisma](https://github.com/prisma/prisma) and Next.js go _great_ together!",
-      published: false,
-      author: {
-        name: "Nikolas Burk",
-        email: "burk@prisma.io",
-      },
-    },
-  ]
-  return { 
-    props: { feed }, 
-    revalidate: 10 
-  }
-}
+const restaurantList = [
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+  {
+    name: "Burgers & Pizza",
+    deliveryEstimate: "30-40 min",
+    minOrder: "$32",
+    itemCount: 2,
+    photo: "/roll-set.png",
+  },
+];
 
-type Props = {
-  feed: PostProps[]
-}
+const offerList = [
+  {
+    tasteText: "Deserty",
+    offerText: "All deserts",
+    offerDiscount: "20% OFF",
+    offerItemImage: "/cupcake.png",
+  },
+  {
+    tasteText: "Foodies",
+    offerText: "Big Burgers",
+    offerDiscount: "50% OFF",
+    offerItemImage: "/cupcake.png",
+  },
+];
 
-const Home: React.FC<Props> = (props) => {
+const Home: React.FC = () => {
+  const [filters, setfilters] = useState([
+    { selected: true, id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+  ]);
+  const onClickFilter = (id) => {
+    setfilters(
+      filters.map((filter) => {
+        if (filter.id === id) {
+          return { ...filter, selected: !filter.selected };
+        }
+        return filter;
+      })
+    );
+  };
   return (
     <Layout>
-      
+      <div className="container flex flex-col items-center m-auto">
+        <div className="flex flex-wrap gap-8 justify-center md">
+          {offerList.map((offer) => (
+            <OfferCard {...offer} />
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-8 justify-center mb-10">
+          <FoodTypeFilters filters={filters} onClickFilter={onClickFilter} />
+        </div>
+        <div className="flex flex-wrap gap-8 justify-center mb-10">
+          {restaurantList.map((restaurant) => (
+            <RestaurantCard {...restaurant} />
+          ))}
+        </div>
+      </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
