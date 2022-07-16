@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      spacing:{
+        "85":"350px"
+      },
       screens: {
         xs: "360px",
         "max-xs": { max: "380px" },

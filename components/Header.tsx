@@ -196,22 +196,20 @@ const Header: React.FC<{ className: string }> = ({ className }) => {
 
   return (
     <nav className={className}>
-      <div className=" px-2 sm:px-4 py-2.5 rounded h-20 flex flex-wrap items-center justify-between md:w-5/6 lg:w-4/5 w-4/5">
+      <div className="sm:px-4 py-2.5 rounded h-20 flex flex-wrap items-center justify-between md:w-5/6 lg:w-4/5 w-screen px-4">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
             src="/logo.svg"
-            className="h-6 mr-3 sm:h-9"
+            className="w-20 mr-3 sm:h-9"
             alt="Food Deliver App"
           />
 
-          <div className="w-56 h-10 max-sm:hidden">
-            <div className="flex space-x-5 items-center justify-end flex-1 h-full px-3 py-2.5 bg-gray-100 rounded-xl">
-              <p className="w-40 text-sm leading-tight text-gray-500">Search</p>
-              <img
-                className="w-4 h-4 rounded-full"
-                src="https://via.placeholder.com/16x16"
-              />
-            </div>
+          <div className="w-56 lg:flex hidden ml-8 space-x-5 items-center justify-end flex-1 h-full px-3 py-2.5 bg-gray-100 rounded-xl">
+            <p className="w-40 text-sm leading-tight text-gray-500">Search</p>
+            <img
+              className="w-4 h-4 rounded-full"
+              src="https://via.placeholder.com/16x16"
+            />
           </div>
         </a>
 
