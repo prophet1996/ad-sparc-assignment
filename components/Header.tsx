@@ -196,7 +196,7 @@ const Header: React.FC<{ className: string }> = ({ className }) => {
 
   return (
     <nav className={className}>
-      <div className="sm:px-4 py-2.5 rounded h-20 flex flex-wrap items-center justify-between md:w-5/6 lg:w-4/5 w-screen px-4">
+      <div className="sm:px-4 py-2.5 rounded h-20 flex flex-wrap items-center justify-between xs:w-5/6 lg:w-4/5 w-screen px-4">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
             src="/logo.svg"
@@ -267,7 +267,7 @@ const Header: React.FC<{ className: string }> = ({ className }) => {
           <button
             data-collapse-toggle="mobile-menu"
             type="button"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 bg-gray-100 rounded-xl h-11 w-11"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >

@@ -12,7 +12,7 @@ module.exports = {
         "85":"350px"
       },
       screens: {
-        xs: "360px",
+        xs: "380px",
         "max-xs": { max: "380px" },
         "max-sm": { max: "460px" },
       },

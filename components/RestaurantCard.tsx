@@ -7,7 +7,7 @@ function RestaurantCard({ name, deliveryEstimate, minOrder, itemCount,photo }) {
         <img className="rounded-t-lg w-full" src="/restaurant.png" alt="" />
       </a>
       <div className="p-5">
-        <div className="flex items-center mb-2">
+        <div className="flex items-center mb-2 justify-between">
           <p className="w-64 text-lg font-bold leading-normal text-gray-800">
             {name}
           </p>
