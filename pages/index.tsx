@@ -89,7 +89,7 @@ const Home: React.FC = () => {
   };
   return (
     <Layout>
-      <div className="container flex flex-col items-center m-auto">
+      <div className="container flex flex-col items-center m-auto lg:w-11/12">
         <div className="flex flex-wrap gap-10 justify-center mx-4">
           {offerList.map((offer) => (
             <OfferCard {...offer} />
@@ -98,15 +98,16 @@ const Home: React.FC = () => {
         <div className="flex flex-wrap gap-8 justify-center mb-10">
           <FoodTypeFilters filters={filters} onClickFilter={onClickFilter} />
         </div>
-          <p
-            className="w-80 text-xl font-semibold leading-7 text-gray-800 font-nunito mr-auto mb-4"
-          >
+        <div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center mb-10">
+          <p className="text-xl font-semibold leading-7 text-gray-800 font-nunito col-span-full">
             Nearby restaurants
           </p>
-        <div className="flex flex-wrap gap-8 justify-center mb-10">
-          {restaurantList.map((restaurant) => (
-            <RestaurantCard {...restaurant} />
-          ))}
+            {restaurantList.map((restaurant) => (
+              <RestaurantCard {...restaurant} />
+            ))}
+          </div>
         </div>
       </div>
     </Layout>
