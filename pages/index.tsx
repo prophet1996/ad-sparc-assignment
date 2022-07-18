@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 import FoodTypeFilters from "../components/FoodTypeFilters";
 import Layout from "../components/Layout";
@@ -70,13 +71,23 @@ const offerList = [
 
 const Home: React.FC = () => {
   const [filters, setfilters] = useState([
-    { selected: true, id: 1,label:"Pizza" },
-    { id: 2 ,label:"Burger"},
-    { id: 3 ,label:"BBQ"},
-    { id: 4 ,label:"Sushi"},
-    { id: 5 ,label:"Vegan"},
-    { id: 6 ,label:"Dessert"},
+    { selected: true, id: 1, label: "Pizza" },
+    { id: 2, label: "Burger" },
+    { id: 3, label: "BBQ" },
+    { id: 4, label: "Sushi" },
+    { id: 5, label: "Vegan" },
+    { id: 6, label: "Dessert" },
   ]);
+
+  const { data: session } = useSession();
+
+  if (!session)
+    return (
+      <Layout>
+        <></>
+      </Layout>
+    );
+
   const onClickFilter = (id) => {
     setfilters(
       filters.map((filter) => {
@@ -91,21 +102,20 @@ const Home: React.FC = () => {
     <Layout>
       <div className="container flex flex-col items-center m-auto lg:w-11/12 px-4">
         <div className="flex flex-wrap gap-10 justify-center">
-          {offerList.map((offer) => (
-            <OfferCard {...offer} />
+          {offerList.map((offer, idx) => (
+            <OfferCard key={idx} {...offer} />
           ))}
         </div>
         <div className="flex flex-wrap gap-8 justify-center mb-10">
           <FoodTypeFilters filters={filters} onClickFilter={onClickFilter} />
         </div>
         <div>
-
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center mb-10">
-          <p className="text-lg font-semibold leading-7 text-gray-800 font-nunito col-span-full">
-            Nearby restaurants
-          </p>
+            <p className="text-lg font-semibold leading-7 text-gray-800 font-nunito col-span-full">
+              Nearby restaurants
+            </p>
             {restaurantList.map((restaurant) => (
-              <RestaurantCard {...restaurant} />
+              <RestaurantCard key={restaurant.name} {...restaurant} />
             ))}
           </div>
         </div>

@@ -2,7 +2,7 @@ import Badge from "./Badge";
 
 function RestaurantCard({ name, deliveryEstimate, minOrder, itemCount,photo }) {
   return (
-    <div className="max-w-sm w-85 bg-white rounded-2xl border border-gray-200 font-nunito">
+    <div className="max-w-sm w-82 bg-white rounded-2xl border border-gray-200 font-nunito">
       <a href="#">
         <img className="rounded-t-lg w-full" src="/restaurant.png" alt="" />
       </a>

@@ -16,9 +16,9 @@ export default function Login({ providers }: { providers: AuthProviderMap }) {
   }, [status]);
 
   return (
-    <section className="flex h-screen w-screen overflow-hidden">
+    <section className="flex h-screen w-screen">
       <LoginForm
-        wrapperClassName="grow-[7] flex flex-col justify-start items-center xs:p-4 max-xs:pt-5"
+        wrapperClassName="grow-[7] flex flex-col justify-start items-center p-4 max-xs:pt-5"
         authProviders={providers}
       />
       <HeroSection wrapperClassName="grow-[5] hidden lg:flex items-center bg-indigo-500 h-screen flex-col px-4 gap-4"/>

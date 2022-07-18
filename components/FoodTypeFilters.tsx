@@ -1,8 +1,9 @@
 function FoodTypeFilters({ filters, onClickFilter }) {
   return filters.map(({ label, selected, id }) => (
     <button
+      key={id}
       onClick={() => onClickFilter(id)}
-      className={`w-40 h-20 max-sm:w-24 flex flex-col items-center justify-center bg-purple-50 border-2 rounded-2xl ${
+      className={`md:w-40 h-20 w-24 flex flex-col items-center justify-center bg-purple-50 border-2 rounded-2xl ${
         selected ? "border-indigo-500" : ""
       } gap-3 p-4`}
     >
