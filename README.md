@@ -1,6 +1,6 @@
 
 # AdSparc Food Ordering App
-
+[AFOA](https://ad-sparc-assignment.vercel.app/)
 AFOA is a responsive, production-ready React/NextJS app.
 It allows you to search for nearby restaurants. Order food and track your orders.
 This app uses to generate Typesafe client giving database agnostic API.
