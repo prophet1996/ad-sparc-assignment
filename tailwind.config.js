@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       spacing:{
-        "85":"350px"
+        "85":"350px",
+        "120":"480px",
       },
       screens: {
         xs: "380px",
@@ -30,6 +31,9 @@ module.exports = {
       fontFamily: {
         nunito: ["Nunito", "san-serif"],
       },
+      letterSpacing: {
+        normal: '0.1',
+      }
     },
   },
   plugins: [],

@@ -70,12 +70,12 @@ const offerList = [
 
 const Home: React.FC = () => {
   const [filters, setfilters] = useState([
-    { selected: true, id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
+    { selected: true, id: 1,label:"Pizza" },
+    { id: 2 ,label:"Burger"},
+    { id: 3 ,label:"BBQ"},
+    { id: 4 ,label:"Sushi"},
+    { id: 5 ,label:"Vegan"},
+    { id: 6 ,label:"Dessert"},
   ]);
   const onClickFilter = (id) => {
     setfilters(
@@ -89,8 +89,8 @@ const Home: React.FC = () => {
   };
   return (
     <Layout>
-      <div className="container flex flex-col items-center m-auto lg:w-11/12">
-        <div className="flex flex-wrap gap-10 justify-center mx-4">
+      <div className="container flex flex-col items-center m-auto lg:w-11/12 px-4">
+        <div className="flex flex-wrap gap-10 justify-center">
           {offerList.map((offer) => (
             <OfferCard {...offer} />
           ))}
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
         <div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center mb-10">
-          <p className="text-xl font-semibold leading-7 text-gray-800 font-nunito col-span-full">
+          <p className="text-lg font-semibold leading-7 text-gray-800 font-nunito col-span-full">
             Nearby restaurants
           </p>
             {restaurantList.map((restaurant) => (
