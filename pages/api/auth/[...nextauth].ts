@@ -15,6 +15,7 @@ const options = {
     signIn: "/auth/signin",
     signOut: "/",
   },
+  secret: process.env.SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -38,5 +39,4 @@ const options = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
-  secret: process.env.NEXTAUTH_SECRET,
 };
