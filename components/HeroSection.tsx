@@ -6,7 +6,7 @@ function HeroSection({ wrapperClassName = "" }) {
           <img className="shadow-2xl"  src="/login_card_2.png" />
         <img className="h-72 w-72 mt-6 shadow-2xl" src="/login_card_3.png" />
         </div>
-          <img className="-translate-x-10 -translate-y-14 shadow-2xl" src="/login_card_1.png" />
+          <img className="xl:-translate-x-10 -translate-y-14 shadow-2xl" src="/login_card_1.png" />
         </span>
       <div className="flex flex-col justify-center items-center w-120">
         <p className="text-3xl font-bold leading-10 text-center text-white mb-4">
