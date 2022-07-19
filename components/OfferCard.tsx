@@ -1,6 +1,6 @@
-function OfferCard({ tasteText, offerText, offerDiscount, offerItemImage,wrapperClassName }) {
+function OfferCard({ tasteText, offerText, offerDiscount, offerItemImage,className }) {
   return (
-    <div className={wrapperClassName}>
+    <div className={className}>
       <div className="grid grid-cols-2 auto-rows-min lg:grid-cols-1 lg:gird-mb-5 lg:grid-rows-4">
         <p className="text-lg leading-7 text-gray-800 self-baseline">
           {offerText}

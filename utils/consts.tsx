@@ -54,21 +54,3 @@ export const restaurantList = [
     },
   ];
   
-  export const offerList = [
-    {
-      tasteText: "Deserty",
-      offerText: "All deserts",
-      offerDiscount: <div>20% OFF</div>,
-      offerItemImage: <img src="/cupcake.png" />,
-      wrapperClassName:
-        "relative bg-purple-50 rounded-2xl flex font-nunito flex-col lg:flex-row-reverse p-4 pb-0 mb-8 items-center",
-    },
-    {
-      tasteText: "Foodies",
-      offerText: "Big Burgers",
-      offerDiscount: <div className="text-orange-500">50% OFF</div>,
-      offerItemImage: <img src="/burger.png" className="lg:translate-y-3" />,
-      wrapperClassName:
-        "relative bg-orange-50 rounded-2xl flex font-nunito flex-col lg:flex-row-reverse p-4 pb-0 mb-8 items-center",
-    },
-  ];
