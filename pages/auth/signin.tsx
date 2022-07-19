@@ -16,7 +16,7 @@ export default function Login({ providers }: { providers: AuthProviderMap }) {
   }, [status]);
 
   return (
-    <section className="flex h-screen w-screen">
+    <section className="flex h-screen w-screen overflow-hidden">
       <LoginForm
         wrapperClassName="grow-[7] flex flex-col justify-start items-center p-4 max-xs:pt-5"
         authProviders={providers}

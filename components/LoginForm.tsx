@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AuthProviderMap } from "../lib/types";
 import Image from "next/image";
 import { signIn } from "next-auth/react";

@@ -1,11 +1,11 @@
-import React, { ReactNode } from "react";
+import { ReactNode,FC } from "react";
 import Header from "./Header";
 
 type Props = {
   children: ReactNode;
 };
 
-const Layout: React.FC<Props> = (props) => (
+const Layout: FC<Props> = (props) => (
   <div className="bg-white">
     <Header className="bg-white border-gray-200 flex items-center justify-center mb-6 border-b"/>
     <div className="layout">{props.children}</div>
